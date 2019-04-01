@@ -1,0 +1,95 @@
+﻿@model Foroffer.Models.ViewModels.AdminPostModel
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">New Post</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="Postadd" asp-controller="Post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="Post.Title" style="width: 45px">Title</label>
+                    <input asp-for="Post.Title" class="postinput" type="text"><br>
+                    <span asp-validation-for="Post.Title"></span>
+                    <label asp-for="Post.Description" style="width: 45px">Description</label><br>
+                    <textarea asp-for="Post.Description" class="texbox" type="text"></textarea><br>
+                    <span asp-validation-for="Post.Description"></span>
+                    <label asp-for="PostImage.FileName">Upload Image</label>
+                    <input asp-for="PostImage.FileName" class="forupload" type="file" name="file">
+                    <br>
+                    <label asp-for="Post.CreatedDate" style="width:80px">Start Date</label>
+                    <input asp-for="Post.CreatedDate" class="postinput" type="date" name="startDate"><br>
+                    <span asp-validation-for="Post.CreatedDate"></span>
+                    <label asp-for="Post.ExpirationDate" style="width: 80px">End Date</label>
+                    <input asp-for="Post.ExpirationDate" class="postinput" type="date" name="endDate"><br>
+                    <span asp-validation-for="Post.ExpirationDate"></span>
+                    <label asp-for="Post.URL" style="width:45px">URL</label>
+                    <input asp-for="Post.URL" class="postinput" type="text" placeholder="URL"><br>
+                    <label asp-for="Post.Company.Name">Company</label>
+                    <select asp-for="Post.CompanyId" asp-items="@Model.CompanyList" id="cat"></select>
+                    <br>
+                    <label asp-for="Category.Name">Category</label>
+                    <select id="CatId" asp-for="Category.Id" asp-items="@Model.CategoryList"></select>
+                    <br />
+                    <label asp-for="Post.Subcategory.Name">Subcategory</label>
+                    <select id="SubId" asp-for="Post.SubcategoryId" asp-items="@(new SelectList(String.Empty, "Id", "Name"))">
+                        <option value="">Select Subcategory</option>
+                    </select>
+                    <br>
+                    <label asp-for="Post.Gifted" style="width:100px"></label>
+                    <input asp-for="Post.Gifted" type="checkbox" name="gifted" class="special" id="forgift" />
+
+                    <br />
+                    <label asp-for="Post.SpecDiscount" style="width:100px"></label>
+                    <input asp-for="Post.SpecDiscount" type="checkbox" name="specDiscount" class="special" />
+
+                    <br />
+                    <button class="push" type="submit">Create</button>
+                </form>
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Script{
+    <script>
+        $(document).ready(function () {
+            $("#CatId").on("change", function () {
+                $list = $("#SubId");
+                $.ajax({
+                    url: "/Post/getSubList",
+                    type: "GET",
+                    data: { id: $("#CatId").val() }, //id of the state which is used to extract cities
+                    traditional: true,
+                    success: function (result) {
+                       console.log(result);
+                        $("#SubId").empty();
+                        $.each(result, function (i, item) {
+                            $("#SubId").append('<option value="' + item.value + '"> ' + item.text + ' </option>');
+                        });
+                    },
+                    error: function () {
+                        alert("Something went wrong");
+                    }
+                });
+            });
+        });
+
+    </script>
+
+}

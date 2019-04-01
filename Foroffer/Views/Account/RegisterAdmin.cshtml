@@ -1,0 +1,53 @@
+﻿@model Foroffer.Models.ViewModels.RegisterModel
+
+@{
+    ViewData["Title"] = "RegisterAdmin";
+}
+
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+               
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <div class="register">
+                    <form method="post" asp-action="RegisterAdmin" asp-controller="Account">
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <h6>Qeydiyyat</h6>
+                        <label asp-for="FullName" style="width: 80px" for="Username">Full Name*</label>
+                        <input asp-for="FullName" class="loginput" type="text" value=""><br>
+                        <label asp-for="UserName" style="width: 80px" for="Username">Username*</label>
+                        <input asp-for="UserName" class="loginput" type="text" value=""><br>
+                        <span asp-validation-for="UserName"></span>
+                        <label asp-for="Email" style="width: 80px" for="Email">Email*</label>
+                        <input asp-for="Email" class="loginput" type="email" value=""><br>
+                        <span asp-validation-for="Email"></span>
+                        <label asp-for="Password" style="width: 80px" for="Password">Password*</label>
+                        <input asp-for="Password" class="loginput" type="text" value="">
+                        <span asp-validation-for="Password"></span>
+                        <button type="submit" class="enter">Göndər</button><br>
+                        <p><b>Qeyd:</b> Full Name hissədə ad və soyadınızı, Username hissədə yalnız inigilis hərflərilə max 12 simvol, Password hissəsində isə max 14 simvol(tərkibində rəqəm və kiçik hərif mütləqdir) yazılmalıdır.</p>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+               
+            </div>
+
+        </div>
+    </div>
+    <div class="mobcompanies">
+        <h6>Şirkət seçimi</h6>
+        <select>
+            <option class="choose">Avtosalonlar</option>
+            <option>Auto Azerbaijan</option>
+            <option>Improtex Motors</option>
+            <option>Kia Baku</option>
+            <option>Autolux</option>
+        </select>
+    </div>
+</section>
+
+
+

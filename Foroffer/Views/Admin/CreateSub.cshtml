@@ -1,0 +1,57 @@
+﻿@model Foroffer.Models.ViewModels.SubViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h6 style="font-weight:bold">New Subcategory</h6>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="CreateSub" asp-controller="Admin">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="Subcategory.Name" style="width: 45px">Name</label>
+                    <input asp-for="Subcategory.Name" class="postinput" type="text"><br>
+                    <span asp-validation-for="Subcategory.Name"></span>
+                    <label asp-for="Subcategory.Category.Name" style="width: 45px">Category</label>
+                    <select asp-for="Subcategory.CategoryId" asp-items="@Model.CategoryList" id="cat">
+                       
+                    </select>
+                    <br>
+                    <button class="push" type="submit">Create</button>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <table style="width:280px">
+                    <tr>
+                        <th class="mytab">Subcategory</th>
+                        <th class="mytab">Edit</th>
+                        <th class="mytab">Delete</th>
+                    </tr>
+                    @foreach (Subcategory item in Model.Subcategories)
+                    {
+                        <tr>
+                            <td class="mytab">@item.Name</td>
+                            <td class="mytab"><a asp-action="EditSubcat" asp-controller="Admin" asp-route-id="@item.Id">Edit</a></td>
+                            <td class="mytab"><a asp-action="DeleteSub" asp-controller="Admin" asp-route-id="@item.Id">Delete</a></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+

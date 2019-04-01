@@ -1,0 +1,32 @@
+﻿@model Foroffer.Models.ViewModels.CompanyModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <button class="addnew"><a asp-action="Postadd" asp-controller="Post">Create Post</a></button>
+    <button class="addnew"><a asp-action="CreateComp" asp-controller="Admin">Create Company</a></button>
+</section>
+<table style="width:500px">
+    <tr>
+        <th class="mytab">Company</th>
+        <th class="mytab">VOEN</th>
+        <th class="mytab">Logo</th>
+        <th class="mytab">Address</th>
+        <th class="mytab">Edit</th>
+        <th class="mytab">Delete</th>
+    </tr>
+    @foreach (Company item in Model.Companies)
+    {
+    <tr>
+        <td class="mytab">@item.Name</td>
+        <td class="mytab">@item.VOEN</td>
+        <td class="mytab"><img src="~/images/@item.LogoPath"></td>
+        <td class="mytab">@item.Address</td>
+        <td class="mytab"><a asp-action="EditComp" asp-controller="Admin" asp-route-id="@item.Id">Edit</a></td>
+        <td class="mytab"><a asp-action="DeleteComp" asp-controller="Admin" asp-route-id="@item.Id">Delete</a></td>
+
+    </tr>
+    }
+</table>

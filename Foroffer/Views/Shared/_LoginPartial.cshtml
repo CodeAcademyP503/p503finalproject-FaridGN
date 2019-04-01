@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Threading
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form class="account" method="post" asp-action="LogoutUser" asp-controller="Account">
+        <ul>
+            <li>
+                <a style="margin-left:-44px;" href="">@UserManager.GetUserName(User)!</a>
+            </li>
+            <li>
+                <button type="submit" style="border: 0px solid transparent; margin-left:-29px; font-size: 14px; cursor: pointer; font-weight: bold;" class="logoutbtn">LogOut</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <ul class="account">
+        @if (Thread.CurrentThread.CurrentCulture.Name == "en-GB")
+        {
+            <li>
+                <a asp-action="LoginUser" asp-controller="Account">Login</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a asp-action="LoginUser" asp-controller="Account">Daxil ol</a>
+            </li>
+        }
+
+        @if (Thread.CurrentThread.CurrentCulture.Name == "en-GB")
+        {
+            <li>
+                <a asp-action="RegisterUser" asp-controller="Account">Register</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a asp-action="RegisterUser" asp-controller="Account">Qeydiyyat</a>
+            </li>
+        }
+
+    </ul>
+}
+
+

@@ -1,0 +1,61 @@
+﻿@model Foroffer.Models.ViewModels.CompanyModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h6 style="font-weight:bold">New Company</h6>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="CreateComp" asp-controller="Admin" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="Company.Name" style="width: 60px">Name</label>
+                    <input asp-for="Company.Name" class="postinput" type="text"><br>
+                    <span asp-validation-for="Company.Name"></span>
+                    <label asp-for="Company.VOEN" style="width: 60px">Tax Id</label>
+                    <input asp-for="Company.VOEN" class="postinput" type="text"><br>
+                    <label asp-for="LogoFile.FileName">Upload Logo Image</label>
+                    <input asp-for="LogoFile.FileName" class="forupload" type="file" name="file"><br>
+                    <label asp-for="Company.Address" style="width: 60px">Address</label>
+                    <input asp-for="Company.Address" class="postinput" type="text"><br>
+                    <span asp-validation-for="Company.Address"></span>
+                    <label asp-for="Company.MoreLink" style="width: 60px">More</label>
+                    <input asp-for="Company.MoreLink" class="postinput" type="text"><br>
+                    <label asp-for="Company.Membership">Membership</label>
+                    <select asp-for="Company.Membership" >
+                        <option value="Free">Free</option>
+                        <option value="Paid">Paid</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Create Company" />
+                    <br>
+                    @ViewBag.Message
+                </form>
+                <br>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+               
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+

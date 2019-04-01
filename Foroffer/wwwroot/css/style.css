@@ -1,0 +1,1087 @@
+body {
+    margin: 5px 1px;
+}
+
+.navbar {
+    background-color: rgb(229, 226, 226);
+    height: 100px;
+}
+
+.firstpart {
+    float: left;
+}
+
+.secondpart {
+    float: right;
+}
+
+#logo {
+    float: left;
+}
+
+    #logo img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    #logo p {
+        font-size: 12px;
+        font-weight: bold;
+        margin-left: 3px;
+    }
+
+#searchbar {
+    float: left;
+    margin-left: -6px;
+}
+
+.clear {
+    clear: both;
+}
+
+#searchbar i {
+    font-size: 16px;
+    color: white;
+}
+
+#searchbtn {
+    display: inline-block;
+    margin-left: -6px;
+    background-color: rgb(245, 152, 65);
+    border: 1px solid rgb(197, 194, 194);
+    height: 32px;
+    width: 38px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+#search {
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(197, 194, 194);
+    height: 33px;
+    width: 300px;
+    padding-left: 5px;
+    margin-left: 35px;
+}
+
+#mobsearchbar {
+    display: none;
+}
+
+    #mobsearchbar i {
+        font-size: 16px;
+        color: white;
+    }
+
+#mobsearchbtn {
+    display: inline-block;
+    margin-left: -6px;
+    background-color: rgb(245, 152, 65);
+    border: 1px solid rgb(197, 194, 194);
+    height: 32px;
+    width: 38px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+#mobsearch {
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(197, 194, 194);
+    height: 33px;
+    width: 200px;
+    padding-left: 15px;
+}
+
+
+.mainlist {
+    list-style: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.menu {
+    padding-top: 1px;
+    line-height: 30px;
+    float: left;
+}
+
+.menubtn {
+    border-radius: 5px;
+    text-align: center;
+    padding-bottom: 2px;
+    cursor: pointer;
+    background-color: rgb(252, 173, 99);
+    box-sizing: border-box;
+    border: 1px solid rgb(252, 173, 99);
+}
+
+#cbtn:hover + .category {
+    display: block;
+}
+
+.category {
+    position: absolute;
+    z-index: 1;
+    margin-left: -1px;
+    background-color: rgb(245, 186, 109);
+    width: 118px;
+    display: none;
+}
+
+    .category:hover {
+        display: block;
+    }
+
+    .category li {
+        list-style: none;
+        text-align: left;
+        margin-left: -5px;
+    }
+
+        .category li:hover .sub {
+            display: block;
+        }
+
+.sub {
+    position: absolute;
+    z-index: 0;
+    margin-left: 80px;
+    margin-top: -28px;
+    background-color: rgb(245, 186, 109);
+    display: none;
+}
+
+    .sub li {
+        width: 110px;
+        text-align: left;
+        margin-left: -9px;
+    }
+
+.mobile {
+    float: right;
+}
+
+.mobmenu ul li {
+    margin-left: -12px;
+}
+
+.smallmenu{
+    display: none;
+}
+
+.mobcategory {
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    z-index: 1;
+    background-color: rgb(245, 186, 109);
+    width: 205px;
+}
+
+    .mobcategory p {
+        font-weight: bold;
+        padding-top: 5px;
+    }
+
+    .mobcategory li {
+        list-style: none;
+        text-align: left;
+        margin-left: -5px;
+        font-weight: 600;
+        border-width: 1px 1px 0px 1px;
+        border-style: solid;
+        border-color: rgb(250, 191, 82);
+        background-color: rgb(241, 205, 149);
+    }
+
+.mobsub {
+    margin-left: -20px;
+    background-color: rgb(245, 186, 109);
+}
+
+    .mobsub li {
+        border-width: 1px 1px 0px 1px;
+        border-style: solid;
+        border-color: rgb(250, 191, 82);
+        background-color: rgb(236, 156, 35);
+    }
+
+.langlog {
+    float: right;
+    margin-top: -10px;
+}
+
+.lanbtn {
+    height: 18px;
+    font-size: 10px;
+    background-color: rgb(252, 173, 99);
+    font-weight: bold;
+    border: 1px solid rgb(252, 173, 99);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.moblanglog {
+    float: left;
+    margin-top: -10px;
+    display: none;
+}
+
+    .moblanglog ul li {
+        list-style: none;
+    }
+
+.login i {
+    margin-top:12px;
+    font-size: 22px;
+    padding-left: 70px;
+    cursor: pointer;
+}
+
+.moblogin i {
+    font-size: 20px;
+    margin-top: 20px;
+    padding-left: 74px;
+    cursor: pointer;
+}
+
+.smoblogin i {
+    font-size: 18px !important;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.login:hover + .account {
+    display: block;
+}
+
+.account:hover {
+    display: block;
+}
+
+@media screen and (max-width: 1246px) {
+    #search {
+        width: 260px;
+    }
+}
+
+@media screen and (max-width: 1156px) {
+    #search {
+        width: 205px;
+    }
+}
+
+.mobmenu {
+    margin-top: 4px;
+    margin-left: 15px;
+    display: none;
+    float: right;
+}
+
+#mobbtn {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: rgb(252, 173, 99);
+    border: 0px solid rgb(252, 173, 99);
+    line-height: 25px;
+}
+
+#minimenu {
+    border-radius: 5px;
+    background-color: rgb(252, 173, 99);
+    border: 0px solid rgb(252, 173, 99);
+    line-height: 25px;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-left: 28px;
+    cursor: pointer;
+}
+
+.mobmenu i {
+    font-size: 24px;
+    padding-top: 3px;
+    margin-bottom: 3px;
+}
+
+@media screen and (max-width: 989px) {
+    .mobmenu {
+        display: block;
+    }
+
+    #catblock {
+        display: none;
+    }
+
+    .moblanglog {
+        display: block;
+    }
+
+    .moblogin:hover + .mobaccount {
+        display: block;
+    }
+
+    .mobaccount:hover {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .langlog {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #search {
+        margin-left: 1px;
+        width: 180px;
+    }
+}
+
+.account {
+    position: absolute;
+    z-index: 1;
+    height: 80px;
+    background-color: rgb(229, 226, 226);
+    padding-left: 35px;
+    margin-right: 15px;
+    clip-path: inset(1px 0px 0px 20px);
+    border: 1px solid gray;
+    border-radius: 5px;
+    display: none;
+}
+
+.mobaccount {
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 110px;
+    background-color: rgb(229, 226, 226);
+    clip-path: inset(1px 0px 0px 20px);
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 35px;
+    display: none;
+}
+
+.smobaccount {
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 110px;
+    background-color: rgb(229, 226, 226);
+    clip-path: inset(1px 0px 0px 20px);
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-left: -28px;
+    margin-top: -25px;
+    display: none;
+}
+
+.mobaccount a {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.smobaccount a {
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: -3px;
+}
+
+.account li {
+    list-style: none;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+.smobaccount li {
+    list-style: none;
+}
+
+@media screen and (max-width: 615px) {
+    #searchbar {
+        display: none;
+    }
+
+    #mobsearchbar {
+        display: block;
+        margin-top: -12px;
+        max-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .carousel-inner {
+        margin-top: 7px;
+    }
+
+    .smoblogin {
+        display: inline-block;
+        width: 28px;
+    }
+
+        .smoblogin:hover + .smobaccount {
+            display: block;
+        }
+
+    .smobaccount:hover {
+        display: block;
+    }
+
+    #slanbtn {
+        display: inline-block;
+        height: 18px;
+        font-size: 10px;
+        background-color: rgb(252, 173, 99);
+        font-weight: bold;
+        border: 1px solid rgb(252, 173, 99);
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        top: -3px;
+    }
+
+}
+
+@media screen and (max-width: 399px) {
+    .firstpart {
+        width: 146px;
+    }
+
+    .smoblogin {
+        margin-left: 4px;
+    }
+
+    .secondpart {
+        width: 82px;
+        margin-left: -1px;
+    }
+
+    .moblanglog {
+       display: none;
+    }
+
+    .slanbtn {
+        clip-path: inset(0px 3px 0px 1px);
+    }
+
+    .moblogin i {
+        margin-left: -3px;
+    }
+
+    .navbar {
+        height: 90px;
+    }
+
+    .smallmenu {
+        display: block;
+    }
+
+    .smoblogin {
+       position: relative;
+       top: -22px;
+       left: 22px;
+    }
+
+    #forlang{
+        margin-top: 10px;
+        margin-left: 4px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .d-block {
+        height: 150px;
+    }
+}
+
+.icons h5 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(32, 81, 189);
+    font-size: 18px;
+}
+
+.mobicons h5 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(32, 81, 189);
+}
+
+.iconimg {
+    max-width: 45px;
+    max-height: 30px;
+}
+
+.icons {
+    margin: 12px auto;
+    max-width: 500px;
+}
+
+.iconrow {
+    margin: 1px auto;
+    max-width: 390px;
+}
+
+.mobicons {
+    margin: 4px auto;
+    max-width: 290px;
+    display: none;
+}
+
+.alink {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.iconcont {
+    text-align: center;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    width: 60px;
+    height: 40px;
+}
+
+.iconmobcont {
+    text-align: center;
+    display: inline-block;
+    padding-left: 5px;
+    margin-top: 5px;
+    width: 60px;
+    height: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+    .alink {
+        font-size: 11px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 958px) {
+    .iconimg {
+        max-width: 40px;
+        max-height: 29px;
+    }
+
+    .iconcont {
+        width: 50px;
+        height: 30px;
+    }
+
+    .icons {
+        margin-left: 20px;
+        max-width: 425px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .iconimg {
+        max-width: 50px;
+        max-height: 30px;
+    }
+
+    .icons {
+        margin: 1px auto;
+        max-width: 500px;
+    }
+
+    .iconcont {
+        text-align: center;
+        display: inline-block;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 5px;
+        width: 55px;
+        height: 35px;
+    }
+
+    .alink {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+}
+
+@media screen and (max-width: 528px) {
+    .iconimg {
+        max-width: 39px;
+        max-height: 29px;
+    }
+}
+
+.iconrow {
+    margin-top: 10px;
+}
+
+@media screen and (max-width:505px) {
+
+    .alink {
+        font-size: 12px;
+    }
+
+    .mobicons {
+        display: block;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .mobicons h5 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .iconmobcont {
+        padding-left: 20px;
+    }
+
+    .iconimg {
+        max-width: 45px;
+        max-height: 30px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    #mobsearch {
+        width: 175px;
+    }
+
+    .mobicons {
+        margin: 1px auto;
+    }
+}
+
+.netnews {
+    max-width: 395px;
+    margin: 2px auto;
+    height: 40px;
+}
+
+.infotool {
+}
+
+.newswidget {
+    margin: auto;
+}
+
+#weather {
+    margin-left: 15px;
+    margin-top: 5px;
+    float: left;
+}
+
+.lastinfo {
+    margin-left: 6px;
+    float: left;
+}
+
+#mynews {
+    border-radius: 6px;
+    background-color: rgb(245, 173, 107);
+    text-align: center;
+    float: right;
+    margin-right: 25px;
+    margin-top: 4px;
+    border: 0px solid rgb(245, 173, 107);
+}
+
+.netnews p {
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 8px;
+    color: rgb(20, 74, 136);
+    line-height: 10px;
+}
+
+.postcont {
+    max-width: 216px;
+    height: 190px;
+    border: 1px solid black;
+    background-color: rgb(245, 245, 241);
+    margin-top: 5px;
+}
+
+.postlogo{
+    max-width: 95px;
+    max-height: 60px;
+}
+
+    .postcont span a {
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: underline;
+        padding-left: 8px;
+    }
+
+    .postcont h6 {
+        font-weight: bold;
+        text-align: center;
+        padding: 1px 2px;
+        font-size: 15px;
+    }
+
+    .postcont img {
+        max-width: 215px;
+        max-height: 115px;
+        display: block;
+        margin: 1px auto;
+    }
+
+.postitem {
+    max-width: 216px;
+    height: 190px;
+    border: 1px solid black;
+    background-color: rgb(245, 245, 241);
+    margin-top: 5px;
+}
+
+    .postitem span a {
+        font-weight: bold;
+        font-size: 14px;
+        text-decoration: underline;
+        padding-left: 20px;
+    }
+
+    .postitem h6 {
+        font-weight: bold;
+        text-align: center;
+        padding: 1px 2px;
+    }
+
+    .postitem img {
+        max-width: 175px;
+        max-height: 125px;
+        display: block;
+        margin: 1px auto;
+    }
+
+.recentpost {
+    margin-top: 0px;
+    background-color: rgb(228, 228, 224);
+    margin-left: 2px;
+}
+
+    .recentpost h5 {
+        text-align: center;
+        font-weight: bold;
+        color: rgb(20, 74, 136);
+    }
+
+.exclusive {
+    max-width: 225px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+    .exclusive h5 {
+        margin: 1px auto;
+    }
+
+.bestinfo {
+    max-width: 500px;
+    margin: 2px auto;
+}
+
+@media screen and (max-width:975px) {
+    .postcont {
+        max-width: 180px;
+    }
+
+        .postcont img {
+            max-width: 175px;
+            max-height: 95px;
+        }
+
+    .freenews {
+        max-width: 180px;
+    }
+
+    .bestinfo {
+        max-width: 395px;
+    }
+
+    .lastinfo {
+        margin-left: 1px;
+    }
+
+    #weather {
+        margin-left: 40px;
+    }
+
+    #mynews {
+        margin-right: 40px;
+        padding: 3px 0px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:825px) {
+    .postcont {
+        max-width: 160px;
+        height: 185px;
+    }
+
+        .postcont img {
+            max-width: 155px;
+            max-height: 85px;
+        }
+
+        .postcont span a {
+            padding-left: 25px;
+        }
+
+    .netnews p {
+        font-size: 12px;
+    }
+
+    .recentpost {
+    }
+
+        .recentpost h5 {
+            font-size: 16px;
+        }
+
+    #mynews {
+        margin-right: 50px;
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .postcont {
+        max-width: 218px;
+        height: 195px;
+    }
+
+        .postcont img {
+            max-width: 215px;
+            max-height: 115px;
+        }
+
+    .netnews h6 {
+        font-size: 16px;
+    }
+
+    .bestinfo {
+        max-width: 500px;
+    }
+
+    .lastinfo {
+        margin-left: 8px;
+    }
+
+    .recentpost h5 {
+        font-size: 18px;
+    }
+
+    #weather {
+        margin-left: 20px;
+    }
+
+    .newswidget {
+        display: none;
+    }
+}
+
+@media screen and (max-width:505px) {
+    .postcont {
+        max-width: 218px;
+        height: 205px;
+        margin: 5px auto;
+    }
+
+        .postcont img {
+            max-width: 215px;
+            max-height: 150px;
+        }
+
+    .freenews {
+        max-width: 218px;
+        margin: 6px auto;
+    }
+
+    .netnews h6 {
+        font-size: 16px;
+    }
+
+    .bestinfo {
+        max-width: 290px;
+    }
+
+    .lastinfo {
+        display: none;
+    }
+
+    .mobi {
+        display: block;
+        margin: 1px auto;
+        float: none;
+    }
+
+    #mynews {
+        margin-left: 29px;
+    }
+
+    #weather {
+        margin-top: 5px;
+    }
+}
+
+.proslider h5 {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(32, 81, 189);
+}
+
+.proslider {
+    position: relative;
+    z-index: 0;
+}
+
+.owl-prev {
+    width: 20px;
+    height: 25px;
+    background-color: rgb(245, 152, 65) !important;
+}
+
+.owl-next {
+    width: 20px;
+    height: 25px;
+    background-color: rgb(245, 152, 65) !important;
+}
+
+.foot-container {
+    background-color: rgb(229, 226, 226);
+    margin-top: 10px;
+}
+
+.mobfoot-container {
+    display: none;
+}
+
+.menuinfo {
+    margin: 15px auto;
+}
+
+    .menuinfo h6 {
+        margin-left: 30px;
+        font-weight: bold;
+    }
+
+.footinfo li {
+    list-style: none;
+    font-weight: 500;
+}
+
+.social {
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 22px;
+}
+
+.partners li {
+    list-style: none;
+}
+
+.about {
+    list-style: none;
+}
+
+.resetrow {
+    margin-left: -14px;
+    margin-right: -14px;
+}
+
+.currency {
+    display: block;
+    height: 70px;
+    clip-path: inset(32px 1px 1px 26px);
+    margin-top: -26px;
+    margin-bottom: 6px;
+    border-bottom: 1px;
+    border-bottom-color: black;
+}
+
+.mobcurrency {
+    display: none;
+    clip-path: inset(34px 1px 1px 26px);
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 580px) {
+    .currency {
+        display: none;
+    }
+
+    .mobcurrency {
+        display: block;
+    }
+}
+
+.mobnewswidget {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    .mobnewswidget {
+        display: block;
+    }
+
+    #mmynews {
+        border-radius: 6px;
+        background-color: rgb(245, 173, 107);
+        text-align: center;
+        float: right;
+        margin-right: 25px;
+        margin-top: 4px;
+        border: 0px solid rgb(245, 173, 107);
+    }
+
+    #mweather {
+        margin-left: 15px;
+        margin-top: 5px;
+        float: left;
+    }
+}
+
+@media screen and (max-width: 505px) {
+
+    #mmynews {
+        margin-right: 40px;
+    }
+
+    #mweather {
+        margin-left: 30px;
+    }
+
+    .postcont {
+        max-width: 275px;
+        height: 245px;
+    }
+
+        .postcont img {
+            max-width: 245px;
+            max-height: 165px;
+        }
+}
+
+#forlang{
+    margin-left: 65px;
+}
+
+.aboutus{
+    height: 370px;
+}
+

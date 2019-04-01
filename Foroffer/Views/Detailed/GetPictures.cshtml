@@ -1,0 +1,31 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">Detailed Pictures</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <ul>
+                    @foreach (Picture item in Model.Pictures)
+                    {
+                        <li>@item.PicPath <a asp-action="EditPicture" asp-controller="Detailed" asp-route-id="@item.Id">Edit</a> <a asp-action="DeletePicture" asp-controller="Detailed" asp-route-id="@item.Id">Delete</a> </li>
+                    }
+                </ul>
+              
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>

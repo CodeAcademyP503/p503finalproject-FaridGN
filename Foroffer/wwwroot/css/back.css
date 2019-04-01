@@ -1,0 +1,89 @@
+
+.myaction{
+    background-color: rgb(252, 173, 99);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 3px 6px;
+    padding-bottom: 3px;
+    font-size: 12px;
+}
+
+.actions{
+    border: 1px solid black;
+    background-color: azure;
+}
+
+.postinput{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.buttonpanel h5{
+    color: red;
+    font-weight: bold;
+}
+
+.texbox{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 50px;
+    width: 195px;
+}
+
+.push{
+    margin: 8px 6px;
+    background-color: rgb(252, 173, 99);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+
+#cat{
+    margin-left: 42px;
+    border:1px solid black;
+    border-radius: 5px;
+}
+
+.mytab{
+    margin: 0px 12px;
+}
+
+.choice {
+    margin: 8px 6px;
+    background-color: rgb(252, 173, 99);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.addnew {
+    margin: 8px 10px;
+    background-color: rgb(252, 173, 99);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-bottom: 3px;
+    display: inline-block;
+}
+
+.slides{
+    margin: 10px;
+}
+
+.property{
+    display: inline-block;
+}
+
+.writing{
+    display: inline-block;
+}
+
+.detaileds p {
+    font-size: 18px;
+    color: green;
+}

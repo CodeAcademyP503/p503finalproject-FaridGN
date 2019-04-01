@@ -1,0 +1,169 @@
+﻿@using System.Threading
+@using Foroffer
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+@inject IViewLocalizer Localizer
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Farid Gulmammadov">
+    <meta name="description" content="endirim kampaniya">
+    <meta name="keywords" content="foroffer, for offer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/substyle.css">
+    <title>forOffer</title>
+    <link rel="icon" type="image/png" href="~/images/tlogo.png" />
+</head>
+
+<body>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="navbar resetrow">
+                    <div class="firstpart">
+                        <div id="logo">
+                            <img src="~/images/flogo.png">
+                            <p>@SharedLocalizer["Xüsusi təkliflər bir arada"]</p>
+                        </div>
+                        <div id="searchbar">
+                            <form method="get" asp-action="Search" asp-controller="Home">
+                                <input id="search" type="text" name="keyword" value="@ViewBag.keyword" placeholder="Axtar">
+                                <button id="searchbtn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="secondpart">
+                        @await Component.InvokeAsync("Menu")
+                        <div class="langlog">
+                            @await Html.PartialAsync("_LangPartial")
+                            <div class="login">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            @await Html.PartialAsync("_LoginPartial")
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </section>
+                <div class="clear"></div>
+                <div id="mobsearchbar">
+                    <form method="get" asp-action="Search" asp-controller="Home">
+                        <input id="mobsearch" type="text" name="keyword" value="@ViewBag.keyword" placeholder="Axtar">
+                        <button id="mobsearchbtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!--end of navbar-->
+        @RenderBody()
+        <!--start of footer-->
+        <footer class="foot-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>@SharedLocalizer["Bizə yaxın ol"] </h6>
+                        <ul class="footinfo">
+                            <li>
+                                <a asp-action="About" asp-controller="Home">forOffer.net</a>
+                            </li>
+                            <li>
+                                <a asp-action="RegisterUser" asp-controller="Account">@SharedLocalizer["Qeydiyyat"]</a>
+                            </li>
+                            <li>
+                                <a asp-action="LoginUser" asp-controller="Account">@SharedLocalizer["Daxil ol"]</a>
+                            </li>
+                            <li>
+                                <a asp-action="Contact" asp-controller="Contact" >@SharedLocalizer["Əlaqə"]</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>@SharedLocalizer["Partnyorluq"]</h6>
+                        <ul class="partners">
+                            <li>
+                                <a href="">@SharedLocalizer["Müraciət"]</a>
+                            </li>
+                            <li>
+                                <a href="">@SharedLocalizer["Daxil ol"]</a>
+                            </li>
+                            <li>
+                                <a href="">@SharedLocalizer["Əməkdaşlıq şərtləri"]</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>Foroffer.net</h6>
+                        <ul class="about">
+                            <li>
+                                <a asp-action="About" asp-controller="Home">@SharedLocalizer["Haqqımızda"]</a>
+                            </li>
+                            <li>
+                                <a href="">@SharedLocalizer["Məxfilik siyasəti"]</a>
+                            </li>
+                            <li>
+                                <a asp-action="Admin" asp-controller="Admin">Admin Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <ul class="footinfo">
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/posted.js"></script>
+
+    @RenderSection("Script", false)
+
+</body>
+
+</html>

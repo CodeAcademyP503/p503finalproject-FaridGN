@@ -1,0 +1,14 @@
+﻿@model Foroffer.Models.ViewModels.SlideViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<div class="slides">
+    <form method="post" asp-action="EditSlide" asp-controller="Slides" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Image.Id" />
+        <label asp-for="imageFile.FileName">Image</label>
+        <input asp-for="imageFile.FileName" class="forupload" type="file" name="file" /><br>
+        <input type="submit" value="Submit" />
+    </form>
+</div>

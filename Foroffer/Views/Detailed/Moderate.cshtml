@@ -1,0 +1,22 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-4">
+            <h5>Add Images</h5>
+                <a asp-action="AddPicture" asp-controller="Detailed" asp-route-id="@Model.Detailed.Id">Add pictures for detailed post</a><br />
+                <a asp-action="SetFeature" asp-controller="Detailed" asp-route-id="@Model.Detailed.Id">Add features for detailed post</a>
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+        </div>
+    </div>
+</div>
+

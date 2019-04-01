@@ -1,0 +1,142 @@
+﻿@model PagedList.Core.IPagedList<Foroffer.Models.Post>
+
+<section class="posts">
+    <div class="post-container">
+
+        @{
+            int n = 0;
+        }
+        @foreach (Post item in Model)
+        {
+            if (n % 4 == 0)
+            {
+                @:<div class="row">
+                }
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="post">
+                        <div class="heading">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <img class="postlogo" src="~/images/@item.Company.LogoPath">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                    <div class="titles">
+                                        <p class="ptitle">@item.Company.Name</p>
+                                        <p class="address"><b>Ünvan:</b> @item.Company.Address</p>
+                                        <a href="">
+                                            <p>Bütün ünvanlar</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postcontent">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="uppart">
+                                        <h6>@item.Title</h6>
+                                    </div>
+                                    <img class="postimg" src="~/images/@item.Image">
+                                    <div class="posttext">
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                        <p class="formore">
+                                            <strong>Ətraflı:</strong>
+                                            <a href="@item.URL" target="_blank">BURADA</a>
+                                        </p>
+                                    </div>
+                                    <div class="dates">
+                                        <p class="postdate">Tarix: @item.CreatedDate.ToString("dd/MM/yyyy") _________</p>
+                                        <p class="expdate">Bitme tarix: @item.ExpirationDate.ToString("dd/MM/yyyy") </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                if (n % 4 == 3)
+                {
+                @: </div>
+            }
+
+            n++;
+        }
+
+    </div>
+    <table border="1">
+        <tr>
+            <td colspan="3" align="center">
+                <pager list="@Model" asp-controller="Home" asp-action="Search" asp-route-keyword="@ViewBag.keyword"/>
+            </td>
+        </tr>
+    </table>
+</section>
+<section class="mdposts">
+    <div class="post-container">
+
+        @{
+            int m = 0;
+        }
+        @foreach (Post item in Model)
+        {
+            if (m % 3 == 0)
+            {
+                @:<div class="row">
+                }
+                <div class="col-md-4">
+                    <div class="post">
+                        <div class="heading">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <img class="postlogo" src="~/images/@item.Company.LogoPath">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                    <div class="titles">
+                                        <p class="ptitle">@item.Company.Name</p>
+                                        <p class="address"><b>Ünvan:</b> @item.Company.Address</p>
+                                        <a href="">
+                                            <p>Bütün ünvanlar</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postcontent">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="uppart">
+                                        <h6>@item.Title</h6>
+                                    </div>
+                                    <img class="postimg" src="~/images/@item.Image">
+                                    <div class="posttext">
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                        <p class="formore">
+                                            <strong>Ətraflı:</strong>
+                                            <a href="@item.URL" target="_blank">BURADA</a>
+                                        </p>
+                                    </div>
+                                    <div class="dates">
+                                        <p class="postdate">Tarix: @item.CreatedDate.ToString("dd/MM/yyyy") _________</p>
+                                        <p class="expdate">Bitme tarix: @item.ExpirationDate.ToString("dd/MM/yyyy") </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                if (m % 3 == 2)
+                {
+                @: </div>
+            }
+
+            m++;
+        }
+
+    </div>
+</section>
+

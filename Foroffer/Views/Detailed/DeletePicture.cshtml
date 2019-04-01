@@ -1,0 +1,54 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h6 style="font-weight:bold">Delete Picture</h6>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="DeletePicture" asp-controller="Detailed">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="Confirm">
+                        <h6>Are you sure to delete @Model.Picture.PicPath ?</h6>
+                        <button class="choice">Yes</button>
+                        <button class="choice"><a href="https://localhost:44311/Detailed/GetPictures">No</a></button>
+                    </div>
+                </form>
+                <br>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

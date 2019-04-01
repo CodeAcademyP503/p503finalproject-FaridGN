@@ -1,0 +1,49 @@
+﻿@model Foroffer.Models.ViewModels.SubViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h6 style="font-weight:bold">New Subcategory</h6>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="EditSubcat" asp-controller="Admin">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <input type="hidden" asp-for="Subcategory.Id" />
+                    <label asp-for="Subcategory.Name" style="width: 45px">Name</label>
+                    <input asp-for="Subcategory.Name" class="postinput" type="text"><br>
+                    <span asp-validation-for="Subcategory.Name"></span>
+                    <label asp-for="Subcategory.Category.Name" style="width: 45px">Category</label>
+                    <select asp-for="Subcategory.CategoryId" asp-items="@Model.CategoryList" id="cat">
+                        @foreach (Category item in Model.Categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                    <br>
+                    <button class="push" type="submit">Create</button>
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+
+
+

@@ -1,0 +1,26 @@
+﻿@model Foroffer.Models.ViewModels.ContactViewModel
+
+<section class="Contact">
+    <h5>Bizimlə Əlaqə</h5>
+    @ViewBag.Message
+    <form method="get" asp-action="Contact" asp-controller="Contact">
+        <div asp-validation-summary="ModelOnly"></div>
+        <label asp-for="Name" style="width: 45px">Ad</label>
+        <input asp-for="Name" type="text" class="myinfo" value="" />
+        <span asp-validation-for="Name"></span>
+        <br />
+        <label asp-for="Surname" style="width: 45px">Soyad</label>
+        <input asp-for="Surname" type="text" name="surname" class="myinfo" />
+        <span asp-validation-for="Surname"></span>
+        <br />
+        <label asp-for="Email" style="width: 45px">Email</label>
+        <input asp-for="Email" type="email" name="email" class="myinfo" />
+        <span asp-validation-for="Email"></span>
+        <br />
+        <label asp-for="Message">Mesaj</label><br />
+        <textarea asp-for="Message" class="myinfo" style="margin-left: 50px"></textarea>
+        <span asp-validation-for="Message"></span>
+        <br />
+        <input type="submit" value="Gonder" />
+    </form>
+</section>

@@ -1,0 +1,44 @@
+﻿@model Foroffer.Models.ViewModels.CategoryModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h6 style="font-weight:bold">New Category</h6>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="CreateCategory" asp-controller="Admin">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="Category.Name" style="width: 45px">Name</label>
+                    <input asp-for="Category.Name" class="postinput" type="text"><br>
+                    <span asp-validation-for="Category.Name"></span>
+                    <button class="push" type="submit">Create</button>
+                </form>
+                <br>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <ul>
+                    @foreach (Category item in Model.Categories)
+                    {
+                        <li>@item.Name</li>
+                    }
+                </ul>              
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                Hi
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+    
+</section>
+
+
+

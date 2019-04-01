@@ -1,0 +1,59 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">New Detailed</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="SetFeature" asp-controller="Detailed">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div id="fcont"></div>
+                    <div class="fpart">
+                        @foreach (Feature item in Model.Features)
+                        {
+                            if (item != null)
+                            {
+                        <div class="newblock">
+                            <p class="writing">@item.Name :</p>
+                            <p class="writing">@item.Parameter</p>
+                        </div>
+                                
+                            }
+                        }
+                        <div class="property">
+                            <label asp-for="Feature.Name">Feature</label><br />
+                            <input asp-for="Feature.Name" type="text" class="postinput" />
+                        </div>
+                        <div class="property">
+                            <label asp-for="Feature.Parameter">Parameter</label><br />
+                            <input asp-for="Feature.Parameter" type="text" class="postinput" />
+                        </div>
+                    </div>
+                    <br />
+                    <button id="boom">Submit</button>
+                </form>
+                <br />
+                <button class="addnew"><a asp-action="Admin" asp-controller="Admin">Finish</a></button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+

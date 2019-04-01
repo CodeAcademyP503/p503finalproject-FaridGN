@@ -1,0 +1,31 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">Detailed Features</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <ul>
+                    @foreach (Feature item in Model.Features)
+                    {
+                        <li>@item.Name <a asp-action="EditFeature" asp-controller="Detailed" asp-route-id="@item.Id">Edit</a> <a asp-action="DeleteFeature" asp-controller="Detailed" asp-route-id="@item.Id">Delete</a> </li>
+                    }
+                </ul>
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>

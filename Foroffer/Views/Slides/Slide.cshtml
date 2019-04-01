@@ -1,0 +1,23 @@
+﻿@model Foroffer.Models.ViewModels.SlideViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<div class="slides">
+    <form method="post" asp-action="Slide" asp-controller="Slides" enctype="multipart/form-data">
+      <label asp-for="imageFile.FileName">Image</label>
+      <input asp-for="imageFile.FileName" class="forupload" type="file" name="file" /><br>
+       <input type="submit" value="Submit" />
+</form>
+</div>
+
+<div class="simages">
+    <ul>
+        @foreach (Image item in Model.Images)
+        {
+            <li>@item.Path <a asp-action="EditSlide" asp-controller="Slides" asp-route-id="@item.Id">Edit</a> <a asp-action="DeleteSlide" asp-controller="Slides" asp-route-id="@item.Id">Delete</a></li>
+            
+        }
+    </ul>
+</div>

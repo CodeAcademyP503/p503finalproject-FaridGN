@@ -1,0 +1,69 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">Add Images</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="AddPicture" asp-controller="Detailed" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <label asp-for="Detailed.Pictures">Upload Images</label>
+                    <input type="file" id="fileupload" name="files" multiple class="form-control" />
+                    <br>
+                    <button class="push" id="btnupload" type="submit">Upload</button>
+                </form>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Script{
+    <script>
+        $(document).ready(function () {
+            $('#btnupload').on('click', function () {
+                var files = $('fileupload').prop("files");
+                var fdata = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    fdata.append("files", files[i]);
+                }
+                if (files.length > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/Detail/CreateDetailed?handler = images",
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader("XSRF-TOKEN",
+                                $('input:hidden[name="__RequestVerificationToken"]').val());
+                        },
+                        data: fdata,
+                        contentType: false,
+                        processData: false,
+                        success: function (response) {
+                            alert('File Uploaded Successfully.')
+                        }
+                    });
+                }
+                else {
+                    alert('Please select a file.')
+                }
+            })
+        });
+    </script>
+}
+
+
+
+
+

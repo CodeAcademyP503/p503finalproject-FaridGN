@@ -1,0 +1,46 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6">
+            <h5>Post Detailed Components</h5>
+              <div class="detaileds">
+                  <p class="successful">@ViewBag.Message</p> 
+               <table border="1">
+                   <tr>
+                       <th>Post Title</th>
+                       <th>Detailed Info</th>
+                       <th>Pictures</th>
+                       <th>Features</th>
+                       <th>Delete</th>
+                   </tr>
+                   
+                       @foreach (Detailed item in Model.Detaileds)
+                       {
+                   <tr>
+                       <td>@item.Post.Title</td>
+                       <td><a asp-action="EditDetailed" asp-controller="Detailed" asp-route-id="@item.Id">Edit</a></td>
+                       <td><a asp-action="GetPictures" asp-controller="Detailed" asp-route-id="@item.Id">Edit</a></td>
+                       <td><a asp-action="GetFeatures" asp-controller="Detailed" asp-route-id="@item.Id">Edit</a></td>
+                       <td><a asp-action="DeleteDetailed" asp-controller="Detailed" asp-route-id="@item.Id">Delete</a></td>
+                   </tr>
+                           
+                       }
+                   
+               </table>
+              </div>
+         
+        </div>
+        <div class="col-lg-6 col-md-6">
+
+        </div>
+    </div>
+</div>
+
+
+
+

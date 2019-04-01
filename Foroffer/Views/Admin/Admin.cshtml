@@ -1,0 +1,153 @@
+﻿@model Foroffer.Models.ViewModels.AdminPostModel
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5>@ViewBag.Warning</h5>       
+    <button class="addnew"><a asp-action="Postadd" asp-controller="Post">Create Post</a></button>
+    <button class="addnew"><a asp-action="CreateComp" asp-controller="Admin">Create Company</a></button>
+</section>
+<section class="posts">
+    <div class="post-container">
+
+        @{
+            int n = 0;
+        }
+        @foreach (Post item in Model.Posts)
+        {
+            if (n % 4 == 0)
+            {
+                @:<div class="row">
+                }
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="post">
+                        <div class="heading">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <img class="postlogo" src="~/images/@item.Company.LogoPath">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                    <div class="titles">
+                                        <p class="ptitle">@item.Company.Name</p>
+                                        <p class="address"><b>Ünvan:</b> @item.Company.Address</p>
+                                        <a href="">
+                                            <p>Bütün ünvanlar</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postcontent">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="uppart">
+                                        <h6>@item.Title</h6>
+                                    </div>
+                                    <img class="postimg" src="~/images/@item.Image">
+                                    <div class="posttext">
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                        <p class="formore">
+                                            <strong>Ətraflı:</strong>
+                                            <a href="@item.URL" target="_blank">BURADA</a>
+                                        </p>
+                                    </div>
+                                    <div class="dates">
+                                        <p class="postdate">Tarix: @item.CreatedDate.ToString("dd/MM/yyyy") _________</p>
+                                        <p class="expdate">Bitme tarix: @item.ExpirationDate.ToString("dd/MM/yyyy") </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="myaction"><a asp-action="EditPost" asp-controller="Post" asp-route-Id="@item.Id">Edit</a></button>
+                            <button class="myaction"><a asp-action="DeletePost" asp-controller="Post" asp-route-id="@item.Id">Delete</a></button>
+                            <button class="myaction"><a asp-action="CreateDetailed" asp-controller="Detailed" asp-route-id="@item.Id">Detailed</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                if (n % 4 == 3)
+                {
+                @: </div>
+            }
+
+            n++;
+        }
+
+    </div>
+</section>
+<section class="mdposts">
+    <div class="post-container">
+
+        @{
+            int m = 0;
+        }
+        @foreach (Post item in Model.Posts)
+        {
+            if (m % 3 == 0)
+            {
+                @:<div class="row">
+                }
+                <div class="col-md-4">
+                    <div class="post">
+                        <div class="heading">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                    <img class="postlogo" src="~/images/@item.Company.LogoPath">
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                    <div class="titles">
+                                        <p class="ptitle">@item.Company.Name</p>
+                                        <p class="address"><b>Ünvan:</b> @item.Company.Address</p>
+                                        <a href="">
+                                            <p>Bütün ünvanlar</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postcontent">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="uppart">
+                                        <h6>@item.Title</h6>
+                                    </div>
+                                    <img class="postimg" src="~/images/@item.Image">
+                                    <div class="posttext">
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                        <p class="formore">
+                                            <strong>Ətraflı:</strong>
+                                            <a href="@item.URL" target="_blank">BURADA</a>
+                                        </p>
+                                    </div>
+                                    <div class="dates">
+                                        <p class="postdate">Tarix: @item.CreatedDate.ToString("dd/MM/yyyy") _________</p>
+                                        <p class="expdate">Bitme tarix: @item.ExpirationDate.ToString("dd/MM/yyyy") </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="myaction"><a asp-action="EditPost" asp-controller="Post" asp-route-Id="@item.Id">Edit</a></button>
+                            <button class="myaction"><a asp-action="DeletePost" asp-controller="Post" asp-route-id="@item.Id">Delete</a></button>
+                            <button class="myaction">More</button>
+                        </div>
+                    </div>
+                </div>
+
+                if (m % 3 == 2)
+                {
+                @: </div>
+            }
+
+            m++;
+        }
+
+    </div>
+</section>
+

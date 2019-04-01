@@ -1,0 +1,263 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Farid Gulmammadov">
+    <meta name="description" content="endirim kampaniya">
+    <meta name="keywords" content="foroffer, for offer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/css/substyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/back.css">
+    <title>forOffer</title>
+    <link rel="icon" type="image/png" href="~/images/tlogo.png" />
+</head>
+
+<body>
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="navbar resetrow">
+                    <div class="firstpart">
+                        <div id="logo">
+                            <img src="~/images/flogo.png">
+                            <p>Xüsusi təkliflər bir arada</p>
+                        </div>
+                        <div id="searchbar">
+                            <input id="search" type="text" name="Search" placeholder="Axtar">
+                            <button id="searchbtn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="secondpart">
+                        <div class="mobile">
+                            <div class="mobmenu">
+                                <button id="mobbtn">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <ul class="mobcategory" id="catblock">
+                                    <li>
+                                        <p>Operations</p>
+                                    </li>
+                                    <li class="catlist">
+                                        <a asp-action="CreateCategory" asp-controller="Admin">Categories</a>
+                                    </li>
+                                    <li class="catlist">
+                                        <a asp-action="CreateSub" asp-controller="Admin">Subcategories</a>
+                                    </li>
+                                    <li class="catlist">
+                                        <a asp-action="Admin" asp-controller="Admin">Posts</a>
+                                    </li>
+                                    <li class="catlist">
+                                        <a asp-action="CompanyList" asp-controller="Admin">Tools</a>
+                                    </li>
+                                    <li class="catlist">
+                                        <a asp-action="Detailed" asp-controller="Detailed">Detailed</a>
+                                    </li>
+                                    <li class="catlist">
+                                        <a href="">Other</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="moblanglog">
+                               
+                                <div class="moblogin">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <ul class="mobaccount">
+                                    <li>
+                                        <a href="">Daxil ol</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Qeydiyyat</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="smallmenu">
+                                <button id="minimenu">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <br>
+                                <div class="smoblogin">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <ul class="smobaccount">
+                                    <li>
+                                        <a href="">Daxil ol</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Qeydiyyat</a>
+                                    </li>
+                                </ul>
+                               
+                            </div>
+
+                        </div>
+                        <div class="menu">
+                            <ul class="mainmenu">
+                                <li class="mainlist">
+                                    <a asp-action="Index" asp-controller="Home"><i class="fas fa-home"></i></a>
+                                </li>
+                                <li class="mainlist">
+                                    <button id="cbtn" class="menubtn">Operations</button>
+                                    <ul class="category">
+
+                                        <li class="catlist">
+                                            <a asp-action="CreateCategory" asp-controller="Admin">Categories</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a asp-action="CreateSub" asp-controller="Admin">Submenus</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a asp-action="Admin" asp-controller="Admin">Posts</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a asp-action="CompanyList" asp-controller="Admin">Companies</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a asp-action="Slide" asp-controller="Slides">Slider</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a asp-action="DetailedList" asp-controller="Detailed">Detailed</a>
+                                        </li>
+                                        <li class="catlist">
+                                            <a href="">Other</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="mainlist">
+                                    <button class="menubtn">forOffer</button>
+                                </li>
+                                <li class="mainlist">
+                                    <button class="menubtn">Help</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="langlog">
+                           
+                            <div class="login">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            @await Html.PartialAsync("_LoginPartial")
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </section>
+                <div class="clear"></div>
+                <div id="mobsearchbar">
+                    <input id="mobsearch" type="text" name="Search" placeholder="Axtar">
+                    <button id="mobsearchbtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--end of navbar-->
+        @RenderBody()
+        <!--start of footer-->
+        <footer class="foot-container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>Bizə yaxın ol</h6>
+                        <ul class="footinfo">
+                            <li>
+                                <a href="">Qeydiyyat</a>
+                            </li>
+                            <li>
+                                <a href="">Daxil ol</a>
+                            </li>
+                            <li>
+                                <a href="">Əlaqə</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>Partnyorluq</h6>
+                        <ul class="partners">
+                            <li>
+                                <a href="">Müraciət</a>
+                            </li>
+                            <li>
+                                <a href="">Daxil ol</a>
+                            </li>
+                            <li>
+                                <a href="">Əməkdaşlıq şərtləri</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <h6>Foroffer.net</h6>
+                        <ul class="about">
+                            <li>
+                                <a href="">Haqqımızda</a>
+                            </li>
+                            <li>
+                                <a href="">Məxfilik Siyasəti</a>
+                            </li>
+                            <li>
+                                <a href="">ForOffer İnternational</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="menuinfo">
+                        <ul class="footinfo">
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-twitter-square"></i>
+                                </a>
+                            </li>
+                            <li class="social">
+                                <a href="">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/script.js"></script>
+
+    @RenderSection("Script", false)
+
+</body>
+
+</html>

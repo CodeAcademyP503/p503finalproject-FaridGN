@@ -1,0 +1,49 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+@{
+    Layout = "AdminLayout";
+}
+
+<section class="buttonpanel">
+    <h5 style="font-weight:bold">Edit Feature</h5>
+</section>
+<section class="posts">
+    <div class="post-container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                <form method="post" asp-action="EditFeature" asp-controller="Detailed">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <input type="hidden" asp-for="Feature.Id" />
+                    <div class="fpart">
+                        <div class="property">
+                            <label asp-for="Feature.Name">Feature</label><br />
+                            <input asp-for="Feature.Name" type="text" class="postinput" />
+                        </div>
+                        <div class="property">
+                            <label asp-for="Feature.Parameter">Parameter</label><br />
+                            <input asp-for="Feature.Parameter" type="text" class="postinput" />
+                        </div>
+                    </div>
+                    <br />
+                    <button id="boom">Submit</button>
+                </form>
+                <br />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+

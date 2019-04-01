@@ -1,0 +1,97 @@
+﻿@model Foroffer.Models.ViewModels.DetailedViewModel
+
+<section class="detailed">
+    <div class="row">
+        <div class="col-lg-4 col-md-4">
+            <div class="posttitle">
+                <h5>@Model.Post.Title</h5>
+            </div>
+            <div class="picrow">
+                <div class="column">
+                    <img src="~/images/@Model.Post.Image" onclick="openModal();currentSlide(1)" class="bigone">
+                </div>
+            </div>
+            <br>
+            @{
+                int x = 0;
+                int y = 2;
+            }
+            @foreach (Picture item in Model.Detailed.Pictures)
+            {
+                if (x % 2 == 0)
+                {
+                    @:<div class="picrow">
+                    }
+                    <div class="column">
+                        <img src="~/images/@item.PicPath" onclick="openModal();currentSlide(@y)" class="hover-shadow">
+                    </div>
+                    if (x % 2 == 1)
+                    {
+                    @: </div><br>
+
+
+                }
+                x++;
+                y++;
+            }
+
+            <!-- The Modal/Lightbox -->
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <div class="mySlides">
+                        <img src="~/images/@Model.Post.Image" style="width:100%">
+                    </div>
+                    @foreach (Picture item in Model.Detailed.Pictures)
+                    {
+                        <div class="mySlides">
+                            <img src="~/images/@item.PicPath" style="width:100%">
+                        </div>
+                    }
+
+                    <!-- Next/previous controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+            </div>
+            <div class="prodesc">
+                <p>
+                   @Model.Detailed.Outline
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="features">
+                <div class="keyvalues">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Xüsusiyyət</th>
+                                <th>Göstərici</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Feature element in Model.Detailed.Features)
+                            {
+                                <tr>
+                                    <td>@element.Name</td>
+                                    <td>@element.Parameter</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            <div class="companyinfo">
+                <img src="~/images/@Model.Post.Company.LogoPath" class="complogo">
+                <h4>@Model.Post.Company.Name</h4>
+                <p>
+                    @Model.Detailed.CompanyInfo
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

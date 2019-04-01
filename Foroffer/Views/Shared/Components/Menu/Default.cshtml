@@ -1,0 +1,112 @@
+﻿@using Foroffer.Models.ViewModels
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+@using Foroffer
+@using Microsoft.Extensions.Localization
+@model IEnumerable<Foroffer.Models.ViewModels.MenuModel>
+
+@inject IViewLocalizer Localizer
+@inject IStringLocalizer<SharedResources> SharedLocalizer
+
+<div class="mobile">
+    <div class="mobmenu">
+        <button id="mobbtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="mobcategory" id="catblock">
+            <li>
+                <p>@ViewData["Category"]</p>
+            </li>
+            @foreach (MenuModel item in Model)
+            {
+                <li class="catlist">
+
+                    <a href="@Url.Action(item.Category.Action, item.Category.Controller, new { Id = item.Category.Id })">@item.Category.Name</a>
+
+                    <ul class="mobsub">
+                        @if (item.Subcategories != null && item.Subcategories.Count() > 0)
+                        {
+                            foreach (Subcategory submenu in item.Category.Subcategories)
+                            {
+                                <li>
+                                    <a href="@Url.Action("MenuSub", submenu.Controller, new { Id = submenu.Id })">@submenu.Name</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="moblanglog">
+        @await Html.PartialAsync("_LangPartial")
+        <div class="moblogin">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <ul class="mobaccount">
+            <li>
+                <a href="">Daxil ol</a>
+            </li>
+            <li>
+                <a href="">Qeydiyyat</a>
+            </li>
+        </ul>
+    </div>
+    <div class="smallmenu">
+        @await Html.PartialAsync("_LangPartial")
+        <div class="smoblogin">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <ul class="smobaccount">
+            <li>
+                <a href="">Daxil ol</a>
+            </li>
+            <li>
+                <a href="">Qeydiyyat</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div class="menu">
+    <ul class="mainmenu">
+        <li class="mainlist">
+            <a asp-action="Index" asp-controller="Home"><i class="fas fa-home"></i></a>
+        </li>
+        <li class="mainlist">
+            <button id="cbtn" class="menubtn">@ViewData["Category"]</button>
+            <ul class="category">
+                @foreach (MenuModel menuModel in Model)
+                {
+                    <li>
+                        <a href="@Url.Action(menuModel.Category.Action, menuModel.Category.Controller, new { Id = menuModel.Category.Id })">@menuModel.Category.Name</a>
+
+                        <ul class="sub">
+                            @if (menuModel.Subcategories != null && menuModel.Subcategories.Count() > 0)
+                            {
+                                foreach (Subcategory subitem in menuModel.Category.Subcategories)
+                                {
+                                    <li>
+                                        <a href="@Url.Action("MenuSub", subitem.Controller, new { Id = subitem.Id })">@subitem.Name</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </li>
+        <li class="mainlist">
+            <form method="get" asp-action="About" asp-controller="Home">
+                <button class="menubtn">forOffer</button>
+            </form>
+            
+        </li>
+        <li class="mainlist">
+            <form method="get" asp-action="Contact" asp-controller="Contact">
+                <button class="menubtn">@SharedLocalizer["Əlaqə"]</button>
+            </form>
+        </li>
+    </ul>
+</div>
